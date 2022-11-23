@@ -36,5 +36,15 @@ _**Analyzing data packets on Wireshark:**_
 
 _**Code Explanations:**_
 
-1. Module: dpkt (to analyze a pcap file), socket (provides the equivalent of BSD socket interface), binascii (to convert between binary and various ASCII-encoded binary representations)
-2. 
+- Module: dpkt (to analyze a pcap file), socket (provides the equivalent of BSD socket interface), binascii (to convert between binary and various ASCII-encoded binary representations)
+- arp_pktInfo: {No., Time, Source, Destination, Protocol, Length, Info}
+
+1. First, read packets from pcap file using dpkt (dpkt.pcap.Reader().readpkts())
+2. Get the time when the first frame was captured (timestamp of the first captured packet as first_frame)
+3. For each packet, check if it is an ARP packet or not.
+4. If it's an ARP packet, then do the following:
+ * Analyze the length of the ARP packet
+ * Find the source and destination MAC address (using binascii.hexlify -> decode('utf-8') -> ":".join())
+ * Find the source and destination IP address (using socket.inet_ntoa())
+ * Calculate the time it was captured after the first frame was captured
+ * If the packet is for reply (arp.op == 2), then print the arp_pktInfo and the IP addresses for souce and destination.
