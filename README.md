@@ -23,7 +23,18 @@ This program analyzes the pcap trace for the ARP packet.Perform a byte-level pro
 - Print the entire ARP request and response for one ARP packet exchange (similar to WireShark)
 - Based on the ARP messages, print IP address and MAC address of the router.
 
+_**Analyzing data packets on Wireshark:**_
+- No.: The number order of the packet captured
+- Time: How long after starting the capture the particular packet was captured
+- Source: The address of the system that sent the packet
+- Destination: The address of the packet destination
+- Protocol: The type of packet (ex) TCP, UDP, or ARP
+- Length: The packet's length, measured in bytes
+- Info: The information about the packet contents
+
+ -> I will utilize these when I print the analyzed data packets
 
 _**Code Explanations:**_
 
-1. 
+1. Module: dpkt (to analyze a pcap file), socket (provides the equivalent of BSD socket interface), binascii (to convert between binary and various ASCII-encoded binary representations)
+2. 
