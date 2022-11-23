@@ -16,7 +16,7 @@ This mapping procedure is important because the lengths of the IP and MAC addres
 
 
 _**Program Features:**_
-This program analyzes the pcap trace for the ARP packet.Perform a byte-level programming to read each byte and convert it to the ARP header element. 
+This program analyzes the pcap trace for the ARP packet & Perform a byte-level programming to read each byte and convert it to the ARP header element. 
 
 - Read Pcap file using dpkt module
 - Analyze ARP packets
