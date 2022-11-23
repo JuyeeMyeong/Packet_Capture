@@ -14,6 +14,10 @@ Address Resolution Protocol (ARP) is a protocol or procedure that connects an In
 
 This mapping procedure is important because the lengths of the IP and MAC addresses differ, and a translation is needed so that the systems can recognize one another. The most used IP today is IP version 4 (IPv4). An IP address is 32 bits long. However, MAC addresses are 48 bits long. ARP translates the 32-bit address to 48 and vice versa.
 
+_**What is Gratuitous ARP Packet?:**_
+
+The frame of it is addressed to 'ff:ff:ff:ff:ff:ff' to make it a Broadcast frame.
+
 
 _**Program Features:**_
 This program analyzes the pcap trace for the ARP packet & Perform a byte-level programming to read each byte and convert it to the ARP header element. 
@@ -48,3 +52,4 @@ _**Code Explanations:**_
  * Find the source and destination IP address (using socket.inet_ntoa())
  * Calculate the time it was captured after the first frame was captured
  * If the packet is for reply (arp.op == 2), then print the arp_pktInfo and the IP addresses for souce and destination.
+ * If the packet if for request (arp.op == 1) and the destination mac address is assigned to ffff.ffff.ffff, then print out that it is Gratuitous ARP for request.
