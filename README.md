@@ -1,6 +1,6 @@
 # Packet_Capture
 
-### **This program is an implementation of ARP packet capture using Python**
+### **This program is an implementation of packet capture using Python**
 
 _**What is Address Resolution Protocol (ARP) ?:**_
 
